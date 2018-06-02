@@ -73,7 +73,7 @@ const setupAuth = (app) => {
 
 const ensureAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) {
-        return next;
+        return next();
     }
     // denied redirect to login
     res.redirect('/login');

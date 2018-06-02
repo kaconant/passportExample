@@ -7,7 +7,12 @@ router.all('*', ensureAuthenticated);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  User.findById(req.user)
+  .then(user => {
+    res.render('users', {
+      user: user
+    });
+  })
 });
 
 module.exports = router;
