@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+{{#if isLoggedIn}}
+<a href='/user'>go to user profile</a> 
+<br>
+<a href='/logout'>logout</a>
+{{/if}}
+
+{{#unless isLoggedIn}}
+<a href='/login'>login</a>
+{{/unless}}
